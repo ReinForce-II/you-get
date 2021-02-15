@@ -922,7 +922,7 @@ def get_output_filename(urls, title, ext, output_dir, merge, **kwargs):
                 merged_ext = 'mkv'
             else:
                 merged_ext = 'ts'
-    result = title
+    result = os.path.sep.join(title.split('：'))
     if kwargs.get('part', -1) >= 0:
         result = '%s[%02d]' % (result, kwargs.get('part'))
     result = '%s.%s' % (result, merged_ext)

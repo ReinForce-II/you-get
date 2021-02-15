@@ -254,7 +254,7 @@ class VideoExtractor():
                 print('Done.')
 
             if self.danmaku is not None and not dry_run:
-                filename = '{}.cmt.xml'.format(get_filename(self.title))
+                filename = '{}.cmt.xml'.format(os.path.sep.join(get_filename(self.title).split('：')))
                 print('Downloading {} ...\n'.format(filename))
                 with open(os.path.join(kwargs['output_dir'], filename), 'w', encoding='utf8') as fp:
                     fp.write(self.danmaku)
